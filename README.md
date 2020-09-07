@@ -2,6 +2,10 @@
 
 Prevents you from committing passwords and other sensitive information to a git repository.
 
+### 0. 环境要求
+
+git 版本在 **2.9** 及以上。
+
 ### 1. 安装脚本
 
 #### macOS/Linux
