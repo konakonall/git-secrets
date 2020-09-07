@@ -38,7 +38,7 @@ git secrets --install -g
 
 ### 3. 全盘检查
 
-对当前文件以及历史提交做全盘检查。
+#### 对当前文件以及历史提交做全盘检查。
 
 ```sh
 cd git_repo_root
