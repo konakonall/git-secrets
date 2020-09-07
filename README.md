@@ -30,7 +30,7 @@ set-executionpolicy remotesigned
 
 ### 2. 安装提交 hook
 
-对每次提交的变更文件自动做检查。
+全局安装，这样对后续本机所有仓库的提交包含的变更文件都会自动做检查。
 
 ```sh
 git secrets --install -g
@@ -56,13 +56,48 @@ git secrets --scan --no-history
 对于检查出来但确认没有问题的字符串，可以添加例外来绕过检查：
 
 ```sh
-git config --add secrets.allowed xxxxx
+git config --add secrets.allowed AKIDxxxxx
 ```
 
 ### Q&A
 
-#### 在 SourceTree 下 commit 时提示 `git: 'secrets' is not a git command`：
+#### SourceTree 下 commit 时提示 `git: 'secrets' is not a git command`：
 
 请参考下面的步骤修复：
 
 [https://gist.github.com/Neo23x0/1b03425d60c3735a0bc5b18dc08c9abd](https://gist.github.com/Neo23x0/1b03425d60c3735a0bc5b18dc08c9abd)
+
+#### tlinux 上 git 版本较旧
+
+请参考下面的指引升级。
+
+```sh
+# 安装SCL工具
+yum install tlinux-release-scl -y
+
+# 卸载旧版 Git
+yum remove git -y
+
+# 安装 Git 2.18
+yum install rh-git218 -y
+
+# 启用CLI
+yum remove git
+
+# 查看已安装Git版本
+git --version
+```
+
+[http://km.oa.com/group/799/articles/show/299371?ts=1587007135](http://km.oa.com/group/799/articles/show/299371?ts=1587007135)
+
+
+#### Centos 机器 git 版本较旧
+
+可以参考 [https://www.softwarecollections.org/en/scls/rhscl/rh-git218/](https://www.softwarecollections.org/en/scls/rhscl/rh-git218) 安装。
+
+不要忘记添加到环境变量中, 在 `~/.bash_profile` 中添加：
+
+```sh
+source /opt/rh/rh-git218/enable
+```
+
