@@ -54,3 +54,11 @@ git secrets --scan --no-history
 ```sh
 git config --add secrets.allowed xxxxx
 ```
+
+### Q&A
+
+#### 在 SourceTree 下提交提示 `git: 'secrets' is not a git command`：
+
+请参考下面的步骤修复：
+
+[https://gist.github.com/Neo23x0/1b03425d60c3735a0bc5b18dc08c9abd](https://gist.github.com/Neo23x0/1b03425d60c3735a0bc5b18dc08c9abd)
