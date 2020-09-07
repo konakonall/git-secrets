@@ -61,7 +61,7 @@ git config --add secrets.allowed xxxxx
 
 ### Q&A
 
-#### 在 SourceTree 下提交时提示 `git: 'secrets' is not a git command`：
+#### 在 SourceTree 下 commit 时提示 `git: 'secrets' is not a git command`：
 
 请参考下面的步骤修复：
 
